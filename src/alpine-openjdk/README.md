@@ -1,15 +1,13 @@
 
-# My Favorite Color (color)
+# Alpine openjdk (alpine-openjdk)
 
-A feature to remind you of your favorite color
+Installs openjdk on alpine
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/devcontainers/feature-starter/color:1": {
-        "version": "latest"
-    }
+    "ghcr.io/evandro777/devcotainers-features-alpine-openjdk/alpine-openjdk:0": {}
 }
 ```
 
@@ -17,10 +15,10 @@ A feature to remind you of your favorite color
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| favorite | Choose your favorite color. | string | red |
+| version | Choose openjdk version. | string | openjdk17 |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/devcontainers/feature-starter/blob/main/src/color/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/evandro777/devcotainers-features-alpine-openjdk/blob/main/src/alpine-openjdk/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
