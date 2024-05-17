@@ -4,7 +4,7 @@
     "version": "1.0",
     "description": "Installs openjdk on alpine",
     "options": {
-        "favorite": {
+        "version": {
             "type": "string",
             "enum": [
                 "openjdk17",

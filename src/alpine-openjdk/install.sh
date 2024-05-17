@@ -15,5 +15,5 @@
 
 # set -e
 
-echo "Installing ${FAVORITE}"
-apk --no-cache add "${FAVORITE}"
+echo "Installing ${VERSION}"
+apk --no-cache add "${VERSION}"
