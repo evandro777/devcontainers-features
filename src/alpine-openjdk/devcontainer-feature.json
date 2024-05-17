@@ -1,0 +1,23 @@
+{
+    "name": "Alpine openjdk",
+    "id": "alpine-openjdk",
+    "version": "1.0",
+    "description": "Installs openjdk on alpine",
+    "options": {
+        "favorite": {
+            "type": "string",
+            "enum": [
+                "openjdk17",
+                "openjdk18",
+                "openjdk19",
+                "openjdk20",
+                "openjdk21"
+            ],
+            "default": "openjdk17",
+            "description": "Choose openjdk version."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
