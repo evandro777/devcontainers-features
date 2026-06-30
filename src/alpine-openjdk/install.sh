@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu
 
 # The 'install.sh' entrypoint script is always executed as the root user.
 #
@@ -13,12 +14,26 @@
 # echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 # echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-# set -e
+if ! command -v apk >/dev/null 2>&1; then
+    echo "This feature requires an Alpine-based image." >&2
+    exit 1
+fi
+
+if [ -z "${VERSION:-}" ]; then
+    echo "The VERSION option must be set." >&2
+    exit 1
+fi
 
 echo "Installing ${VERSION}"
 apk --no-cache add "${VERSION}"
 
-JAVA_HOME="$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")"
+JAVA_BIN="$(command -v java || true)"
+if [ -z "$JAVA_BIN" ]; then
+    echo "Java was not installed successfully." >&2
+    exit 1
+fi
+
+JAVA_HOME="$(dirname "$(dirname "$(readlink -f "$JAVA_BIN")")")"
 
 cat >/etc/profile.d/java.sh <<EOF
 export JAVA_HOME="$JAVA_HOME"
