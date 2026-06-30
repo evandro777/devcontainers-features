@@ -19,4 +19,10 @@ echo "Installing ${VERSION}"
 apk --no-cache add "${VERSION}"
 
 JAVA_HOME="$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")"
-ln -snf "$JAVA_HOME" /usr/lib/jvm/default-jvm
+
+cat >/etc/profile.d/java.sh <<EOF
+export JAVA_HOME="$JAVA_HOME"
+export PATH="\$JAVA_HOME/bin:\$PATH"
+EOF
+
+chmod 755 /etc/profile.d/java.sh
