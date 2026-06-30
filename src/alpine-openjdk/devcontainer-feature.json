@@ -1,7 +1,7 @@
 {
     "name": "Alpine openjdk",
     "id": "alpine-openjdk",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Installs openjdk on alpine",
     "options": {
         "version": {
@@ -26,5 +26,9 @@
     },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
-    ]
+    ],
+    "containerEnv": {
+        "JAVA_HOME": "/usr/lib/jvm/default-jvm",
+        "PATH": "/usr/lib/jvm/default-jvm/bin:${PATH}"
+    }
 }
