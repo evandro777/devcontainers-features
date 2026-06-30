@@ -17,3 +17,5 @@
 
 echo "Installing ${VERSION}"
 apk --no-cache add "${VERSION}"
+export JAVA_HOME="$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")"
+export PATH="$JAVA_HOME/bin:$PATH"
