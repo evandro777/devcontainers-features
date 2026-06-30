@@ -1,19 +1,26 @@
 {
     "name": "Alpine openjdk",
     "id": "alpine-openjdk",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Installs openjdk on alpine",
     "options": {
         "version": {
             "type": "string",
             "enum": [
                 "openjdk17",
-                "openjdk18",
-                "openjdk19",
-                "openjdk20",
-                "openjdk21"
+                "openjdk17-jre",
+                "openjdk17-jre-headless",
+                "openjdk17-jdk",
+                "openjdk21",
+                "openjdk21-jre",
+                "openjdk21-jre-headless",
+                "openjdk21-jdk",
+                "openjdk25",
+                "openjdk25-jre",
+                "openjdk25-jre-headless",
+                "openjdk25-jdk"
             ],
-            "default": "openjdk17",
+            "default": "openjdk25-jre-headless",
             "description": "Choose openjdk version."
         }
     },
